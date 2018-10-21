@@ -5,9 +5,11 @@ one:
   description: MyText
   price: 1.5
   page: 1
+  language: MyString
 
 two:
   title: MyString
   description: MyText
   price: 1.5
   page: 1
+  language: MyString
