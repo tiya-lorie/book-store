@@ -1,6 +1,6 @@
 class Book < ApplicationRecord
   belongs_to :author
-
+  
   validates_presence_of :title, :price, :language
   validates :title, length: { minimum: 1 }
   validates :description, length: { maximum: 100_000 }

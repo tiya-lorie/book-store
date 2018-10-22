@@ -1,7 +1,7 @@
 class Customers::Bags::Find < ActiveInteraction::Base
-  object :customer
+  integer :id
 
   def execute
-    Customer.bag
+    Bag.find_by_id(id)
   end
 end

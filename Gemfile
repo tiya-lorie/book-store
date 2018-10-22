@@ -38,8 +38,17 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'factory_bot_rails', require: false
+  gem 'faker'
+  gem 'rspec-rails', '~> 3.6'
+  gem 'rspec_api_documentation'
   gem 'pry-byebug'
   gem 'pry-rails'
+end
+
+group :test do
+  gem 'database_cleaner'
+  gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers', ref: 'c0960bd'
 end
 
 group :development do

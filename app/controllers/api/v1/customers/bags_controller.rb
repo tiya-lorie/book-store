@@ -1,5 +1,5 @@
 class Api::V1::Customers::BagsController < Api::V1::Customers::ApplicationController
-  before_action :set_customer, only: %i[show create]
+  before_action :set_customer, only: %i[create]
   before_action :set_bag, except: %i[create]
 
   def show
@@ -19,6 +19,6 @@ class Api::V1::Customers::BagsController < Api::V1::Customers::ApplicationContro
   private
 
   def set_bag
-    @bag = ::Customers::Bags::Find.run!(customer: @customer)
+    @bag = ::Customers::Bags::Find.run!(id: params[:id])
   end
 end
