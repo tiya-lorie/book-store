@@ -1,5 +1,7 @@
 class Book < ApplicationRecord
-  belongs_to :author
+  belongs_to :author  
+  has_many :books_customers
+  has_many :customers, through: :books_customers
   
   validates_presence_of :title, :price, :language
   validates :title, length: { minimum: 1 }

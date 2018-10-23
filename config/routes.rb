@@ -11,8 +11,12 @@ Rails.application.routes.draw do
 
       resources :customers, except: %i[new edit], shallow: true do
         scope module: :customers do
-          resources :bags, only: %i[show create destroy]
+          resources :books, only: %i[index]
         end
+      end
+
+      namespace :customers do
+        resources :books, only: %i[create destroy]
       end
     end
   end
